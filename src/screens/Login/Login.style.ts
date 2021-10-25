@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import normalize from 'react-native-normalize';
 
 import { Dimensions } from 'react-native';
-import { colors, fonts } from '../../config/theme.json';
+import { colors } from '../../config/theme.json';
 
 export const Container = styled.View`
   flex: 1;
@@ -29,7 +29,6 @@ export const Title = styled.Text`
   margin-left: ${0.05 * Dimensions.get('window').width}px;
   font-size: ${normalize(22)}px;
   color: ${colors.black};
-  font-family: ${fonts.regular};
 `;
 
 export const TextLink = styled.TouchableOpacity`

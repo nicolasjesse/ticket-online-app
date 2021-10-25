@@ -13,6 +13,7 @@ const Login: React.FC = ({
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleLogin = () => {
+    navigation.navigate('Main', { screen: 'Catalog' });
   };
 
   return (
@@ -44,7 +45,7 @@ const Login: React.FC = ({
       <S.NoAccountWrapper>
         <AppButton
           title={'Não tenho conta ainda'}
-          onPress={() => navigation.push('Auth', { screen: 'Register' })}
+          onPress={() => navigation.navigate('Auth', { screen: 'Register' })}
           backgroundColor={'transparent'}
           color={colors.default + 'CC'}
           bold={false}
