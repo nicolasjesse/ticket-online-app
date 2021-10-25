@@ -5,11 +5,13 @@ import { colors } from '../../config/theme.json';
 
 interface IProps {
   event: any;
+  status?: boolean;
   onPress?: () => void;
 }
 
 const ListedEvent: React.FC<IProps> = ({
   event,
+  status = false,
   onPress = () => null,
 }) => {
 
@@ -27,7 +29,9 @@ const ListedEvent: React.FC<IProps> = ({
           <S.IconWrapper>
             <Icon name="dollar" size={16} color={colors.black} />
           </S.IconWrapper>
-          <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>Preço: <S.SectionText>{event.price}</S.SectionText></S.SectionLabel>
+          <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
+            Preço: <S.SectionText>{event.price}</S.SectionText>
+          </S.SectionLabel>
         </S.SectionWrapper>
         <S.SectionWrapper>
           <S.IconWrapper>
@@ -54,7 +58,13 @@ const ListedEvent: React.FC<IProps> = ({
           </>}
       </S.MiddleWrapper>
       <S.RightWrapper>
-        <S.TypeLabel>{event.type === 1 ? 'Presencial' : 'Online'}</S.TypeLabel>
+        {status ?
+          <S.StatusLabel status={event.status}>
+            {event.status === 1 ? 'Aguardando Pagamento' : (event.status === 2 ? 'Aprovado' : 'Recusado')}
+          </S.StatusLabel> :
+          <S.TypeLabel>
+            {event.type === 1 ? 'Presencial' : 'Online'}
+          </S.TypeLabel>}
       </S.RightWrapper>
     </S.Container>
   );

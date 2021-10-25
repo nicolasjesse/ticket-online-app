@@ -27,7 +27,7 @@ const Footer: React.FC<IProps> = ({
             Comprar
           </S.IconLabel>
         </S.LabeledIconWrapper>
-        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'MyTickets' })}>
+        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Inventory' })}>
           <S.IconWrapper active={index === 2}>
             <FontAwesome name="ticket" size={24} color={colors.white} />
           </S.IconWrapper>

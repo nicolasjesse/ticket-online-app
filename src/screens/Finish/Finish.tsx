@@ -37,7 +37,7 @@ const Finish: React.FC = ({
       <S.ButtonWrapper>
         <AppButton
           title={'Efetuar Compra'}
-          onPress={() => navigation.navigate('Main', { screen: 'MyTickets' })}
+          onPress={() => navigation.navigate('Main', { screen: 'Inventory' })}
         />
       </S.ButtonWrapper>
       <Footer navigation={navigation} index={1} type={1} />

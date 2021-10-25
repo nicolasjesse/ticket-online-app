@@ -4,6 +4,10 @@ import normalize from 'react-native-normalize';
 import { Dimensions } from 'react-native';
 import { colors } from '../../config/theme.json';
 
+interface StatusProps {
+  status: number;
+}
+
 export const Container = styled.TouchableOpacity`
   align-items: center;
   width: ${0.91 * Dimensions.get('window').width}px;
@@ -71,7 +75,12 @@ export const SectionText = styled.Text`
 `;
 
 export const TypeLabel = styled.Text`
+  font-size: ${normalize(12)}px;
   color: ${colors.black};
   font-weight: bold;
 `;
 
+export const StatusLabel = styled.Text`
+  font-size: ${normalize(12)}px;
+  color: ${(props: StatusProps) => props.status === 1 ? colors.yellow : (props.status === 2 ? colors.green : colors.red)};
+`;

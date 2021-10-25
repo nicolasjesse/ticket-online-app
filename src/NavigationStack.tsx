@@ -4,6 +4,7 @@ import Register from './screens/Register/Register';
 import Catalog from './screens/Catalog/Catalog';
 import EventDetail from './screens/EventDetail/EventDetail';
 import Finish from './screens/Finish/Finish';
+import Inventory from './screens/Inventory/Inventory';
 import Header from './components/Header/Header';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -38,6 +39,10 @@ const MainNavigator = () => (
       header: Header,
     }} />
     <MainStack.Screen name="Finish" component={Finish} options={{
+      headerShown: true,
+      header: Header,
+    }} />
+    <MainStack.Screen name="Inventory" component={Inventory} options={{
       headerShown: true,
       header: Header,
     }} />
