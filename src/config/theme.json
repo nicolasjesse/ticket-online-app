@@ -1,7 +1,7 @@
 {
   "colors": {
     "white": "#FFFFFF",
-    "default": "#465D99",
+    "primary": "#465D99",
     "black": "#000000",
     "gray": "#A5A5A5"
   }

@@ -22,7 +22,7 @@ export const TitleWrapper = styled.View`
 export const Rectangle = styled.View`
   height: ${0.1 * Dimensions.get('window').height}px;
   width: ${0.05 * Dimensions.get('window').width}px;
-  background-color: ${colors.default};
+  background-color: ${colors.primary};
 `;
 
 export const Title = styled.Text`

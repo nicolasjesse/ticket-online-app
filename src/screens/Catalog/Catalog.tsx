@@ -14,9 +14,9 @@ const Catalog: React.FC = ({
 
   return (
     <S.Container>
-      <S.ProducersWrapper>
-        {events.map((event) => <ListedEvent event={event} onPress={() => { }} key={event.name} />)}
-      </S.ProducersWrapper>
+      <S.EventsWrapper>
+        {events.map((event) => <ListedEvent event={event} onPress={() => navigation.navigate('Main', { screen: 'EventDetail' })} key={event.name} />)}
+      </S.EventsWrapper>
       <Footer navigation={navigation} index={1} type={1} />
     </S.Container>
   );

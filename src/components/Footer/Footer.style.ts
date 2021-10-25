@@ -16,7 +16,7 @@ export const Footer = styled.View`
   height: ${0.09 * Dimensions.get('window').height}px;
   width: ${1 * Dimensions.get('window').width}px;
   border: 1px;
-  border-color: ${colors.default+'66'};
+  border-color: ${colors.primary+'66'};
 `;
 
 export const LabeledIconWrapper = styled.TouchableOpacity`
@@ -31,11 +31,11 @@ export const IconWrapper = styled.View`
   width: ${0.1 * Dimensions.get('window').width}px;
   height: ${0.045 * Dimensions.get('window').height}px;
   border-radius: 5px;
-  background-color: ${(props: IconWrapperProps) => props.active ? colors.default : colors.gray};
+  background-color: ${(props: IconWrapperProps) => props.active ? colors.primary : colors.gray};
 `;
 
 export const IconLabel = styled.Text`
   font-size: ${normalize(11)}px;
   font-weight: bold;
-  color: ${(props: IconWrapperProps) => props.active ? colors.default : colors.gray};
+  color: ${(props: IconWrapperProps) => props.active ? colors.primary : colors.gray};
 `;

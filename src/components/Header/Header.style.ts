@@ -22,5 +22,5 @@ export const FilterText = styled.Text`
   position: absolute;
   top: ${0.01 * Dimensions.get('window').height}px;
   right: ${0.02 * Dimensions.get('window').width}px;
-  color: ${colors.default};
+  color: ${colors.primary};
 `;

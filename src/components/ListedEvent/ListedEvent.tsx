@@ -5,12 +5,12 @@ import { colors } from '../../config/theme.json';
 
 interface IProps {
   event: any;
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 const ListedEvent: React.FC<IProps> = ({
   event,
-  onPress,
+  onPress = () => null,
 }) => {
 
   return (

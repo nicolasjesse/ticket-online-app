@@ -22,7 +22,7 @@ export const TitleWrapper = styled.View`
 export const Rectangle = styled.View`
   height: ${0.1 * Dimensions.get('window').height}px;
   width: ${0.05 * Dimensions.get('window').width}px;
-  background-color: ${colors.default};
+  background-color: ${colors.primary};
 `;
 
 export const Title = styled.Text`
@@ -53,13 +53,13 @@ export const TermsView = styled.View`
 `;
 
 export const TermsText = styled.Text`
-  color: ${colors.default};
+  color: ${colors.primary};
   font-weight: bold;
   font-size: ${normalize(14)}px;
 `;
 
 export const TermsLinkText = styled.Text`
-  color: ${colors.default};
+  color: ${colors.primary};
   font-weight: normal;
   text-decoration: underline;
   font-size: ${normalize(14)}px;

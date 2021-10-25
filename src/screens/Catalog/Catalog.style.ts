@@ -12,6 +12,6 @@ export const Container = styled.View`
   background-color: ${colors.white};
 `;
 
-export const ProducersWrapper = styled.View`
+export const EventsWrapper = styled.View`
   flex: 1;
 `;
