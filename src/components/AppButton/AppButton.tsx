@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import * as S from './AppButton.style';
+import * as Styled from './AppButton.style';
 import { colors } from '../../config/theme.json';
 
 interface IProps {
@@ -24,11 +24,11 @@ const AppButton: React.FC<IProps> = ({
 }) => {
 
   return (
-    <S.Container backgroundColor={backgroundColor} onPress={disabled? null : onPress}>
-      <S.Text color={color} bold={bold} fontSize={fontSize}>
+    <Styled.Container backgroundColor={backgroundColor} onPress={disabled? null : onPress}>
+      <Styled.Text color={color} bold={bold} fontSize={fontSize}>
         {title}
-      </S.Text>
-    </S.Container>
+      </Styled.Text>
+    </Styled.Container>
   );
 };
 

@@ -8,6 +8,7 @@ import Inventory from './screens/Inventory/Inventory';
 import TicketDetail from './screens/TicketDetail/TicketDetail';
 import MyEvents from './screens/MyEvents/MyEvents';
 import MyEventDetail from './screens/MyEventDetail/MyEventDetail';
+import Participants from './screens/Participants/Participants';
 import Profile from './screens/Profile/Profile';
 import Header from './components/Header/Header';
 import { NavigationContainer } from '@react-navigation/native';
@@ -63,6 +64,10 @@ const MainNavigator = () => (
       header: Header,
     }} />
     <MainStack.Screen name="MyEventDetail" component={MyEventDetail} options={{
+      headerShown: true,
+      header: Header,
+    }} />
+    <MainStack.Screen name="Participants" component={Participants} options={{
       headerShown: true,
       header: Header,
     }} />

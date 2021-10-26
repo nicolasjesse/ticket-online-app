@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import * as S from './Footer.style';
+import * as Styled from './Footer.style';
 import { colors } from '../../config/theme.json';
 
 interface IProps {
@@ -17,51 +17,51 @@ const Footer: React.FC<IProps> = ({
 }: IProps) => {
 
   return (
-    <S.Footer>
+    <Styled.Footer>
       {type === 1 ? <>
-        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Catalog' })}>
-          <S.IconWrapper active={index === 1}>
+        <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Catalog' })}>
+          <Styled.IconWrapper active={index === 1}>
             <MaterialIcons name="store" size={26} color={colors.white} />
-          </S.IconWrapper>
-          <S.IconLabel active={index === 1}>
+          </Styled.IconWrapper>
+          <Styled.IconLabel active={index === 1}>
             Comprar
-          </S.IconLabel>
-        </S.LabeledIconWrapper>
-        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Inventory' })}>
-          <S.IconWrapper active={index === 2}>
+          </Styled.IconLabel>
+        </Styled.LabeledIconWrapper>
+        <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Inventory' })}>
+          <Styled.IconWrapper active={index === 2}>
             <FontAwesome name="ticket" size={24} color={colors.white} />
-          </S.IconWrapper>
-          <S.IconLabel active={index === 2}>
+          </Styled.IconWrapper>
+          <Styled.IconLabel active={index === 2}>
             Meus Ingressos
-          </S.IconLabel>
-        </S.LabeledIconWrapper>
-        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
-          <S.IconWrapper active={index === 3}>
+          </Styled.IconLabel>
+        </Styled.LabeledIconWrapper>
+        <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
+          <Styled.IconWrapper active={index === 3}>
             <FontAwesome name="user" size={24} color={colors.white} />
-          </S.IconWrapper>
-          <S.IconLabel active={index === 3}>
+          </Styled.IconWrapper>
+          <Styled.IconLabel active={index === 3}>
             Minha conta
-          </S.IconLabel>
-        </S.LabeledIconWrapper>
+          </Styled.IconLabel>
+        </Styled.LabeledIconWrapper>
       </> : <>
-      <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Catalog' })}>
-        <S.IconWrapper active={index === 1}>
+      <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'MyEvents' })}>
+        <Styled.IconWrapper active={index === 1}>
           <MaterialIcons name="store" size={26} color={colors.white} />
-        </S.IconWrapper>
-        <S.IconLabel active={index === 1}>
+        </Styled.IconWrapper>
+        <Styled.IconLabel active={index === 1}>
           Meus Eventos
-        </S.IconLabel>
-      </S.LabeledIconWrapper>
-      <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
-        <S.IconWrapper active={index === 2}>
+        </Styled.IconLabel>
+      </Styled.LabeledIconWrapper>
+      <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
+        <Styled.IconWrapper active={index === 2}>
           <FontAwesome name="user" size={24} color={colors.white} />
-        </S.IconWrapper>
-        <S.IconLabel active={index === 2}>
+        </Styled.IconWrapper>
+        <Styled.IconLabel active={index === 2}>
           Minha conta
-        </S.IconLabel>
-      </S.LabeledIconWrapper>
+        </Styled.IconLabel>
+      </Styled.LabeledIconWrapper>
       </>}
-    </S.Footer>
+    </Styled.Footer>
   )
 }
 

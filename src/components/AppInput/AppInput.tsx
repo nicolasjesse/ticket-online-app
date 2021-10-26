@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import * as S from './AppInput.style';
+import * as Styled from './AppInput.style';
 import { colors } from '../../config/theme.json';
 
 interface IProps {
@@ -24,10 +24,10 @@ const AppInput: React.FC<IProps> = ({
 }) => {
 
   return (
-    <S.Container error={error}>
-      <S.Input placeholder={placeholder} secureTextEntry={secureTextEntry} value={value} onChangeText={(e) => onChange(e)} placeholderTextColor={colors.gray} />
+    <Styled.Container error={error}>
+      <Styled.Input placeholder={placeholder} secureTextEntry={secureTextEntry} value={value} onChangeText={(e) => onChange(e)} placeholderTextColor={colors.gray} />
       {password ? (secureTextEntry ? <Icon name="eye-off" size={24} onPress={onEyeClick} /> : <Icon name="eye" size={24} onPress={onEyeClick} />) : <></>}
-    </S.Container>
+    </Styled.Container>
   )
 }
 

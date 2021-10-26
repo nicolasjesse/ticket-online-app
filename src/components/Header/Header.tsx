@@ -1,20 +1,20 @@
 import React from 'react';
-import * as S from './Header.style';
+import * as Styled from './Header.style';
 import { colors } from '../../config/theme.json';
 
 const Header: React.FC<any> = (props: any) => {
 
   return (
-    <S.Header>
-      <S.LogoImage
+    <Styled.Header>
+      <Styled.LogoImage
         resizeMode={'contain'}
         source={require('../../assets/logo-name.png')}
         style={{ tintColor: colors.primary }}
       />
       {props?.route?.name === 'Inventory' || props?.route?.name === 'Catalog' ?
-        <S.FilterText onPress={() => { }}>Filtrar</S.FilterText> :
+        <Styled.FilterText onPress={() => { }}>Filtrar</Styled.FilterText> :
         <></>}
-    </S.Header>
+    </Styled.Header>
   );
 };
 

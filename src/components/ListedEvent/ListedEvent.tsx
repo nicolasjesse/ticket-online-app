@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import * as S from './ListedEvent.style';
+import * as Styled from './ListedEvent.style';
 import { colors } from '../../config/theme.json';
 
 interface IProps {
@@ -18,65 +18,65 @@ const ListedEvent: React.FC<IProps> = ({
 }) => {
 
   return (
-    <S.Container onPress={onPress}>
-      <S.LeftWrapper>
-        <S.EventImage
+    <Styled.Container onPress={onPress}>
+      <Styled.LeftWrapper>
+        <Styled.EventImage
           resizeMode={'cover'}
           source={require('../../assets/event-logo.jpg')}
         />
-        <S.NameLabel>{event.name}</S.NameLabel>
-      </S.LeftWrapper>
-      <S.MiddleWrapper>
+        <Styled.NameLabel>{event.name}</Styled.NameLabel>
+      </Styled.LeftWrapper>
+      <Styled.MiddleWrapper>
         {type === 1 ?
-          <S.SectionWrapper>
-            <S.IconWrapper>
+          <Styled.SectionWrapper>
+            <Styled.IconWrapper>
               <Icon name="dollar" size={16} color={colors.black} />
-            </S.IconWrapper>
-            <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
-              Preço: <S.SectionText>{event.price <= 0 ? 'Gratuito' : `R$ ${event.price}`}</S.SectionText>
-            </S.SectionLabel>
-          </S.SectionWrapper> :
-          <S.SectionWrapper>
-            <S.IconWrapper>
+            </Styled.IconWrapper>
+            <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
+              Preço: <Styled.SectionText>{event.price <= 0 ? 'Gratuito' : `R$ ${event.price}`}</Styled.SectionText>
+            </Styled.SectionLabel>
+          </Styled.SectionWrapper> :
+          <Styled.SectionWrapper>
+            <Styled.IconWrapper>
               <Icon name="group" size={16} color={colors.black} />
-            </S.IconWrapper>
-            <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
-              Participantes: <S.SectionText>{event.participants}</S.SectionText>
-            </S.SectionLabel>
-          </S.SectionWrapper>}
-        <S.SectionWrapper>
-          <S.IconWrapper>
+            </Styled.IconWrapper>
+            <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
+              Participantes: <Styled.SectionText>{event.participants}</Styled.SectionText>
+            </Styled.SectionLabel>
+          </Styled.SectionWrapper>}
+        <Styled.SectionWrapper>
+          <Styled.IconWrapper>
             <Icon name="calendar" size={16} color={colors.black} />
-          </S.IconWrapper>
-          <S.SectionLabel>Data: <S.SectionText>{event.date}</S.SectionText></S.SectionLabel>
-        </S.SectionWrapper>
-        <S.SectionWrapper>
-          <S.IconWrapper>
+          </Styled.IconWrapper>
+          <Styled.SectionLabel>Data: <Styled.SectionText>{event.date}</Styled.SectionText></Styled.SectionLabel>
+        </Styled.SectionWrapper>
+        <Styled.SectionWrapper>
+          <Styled.IconWrapper>
             <Icon name="clock-o" size={16} color={colors.black} />
-          </S.IconWrapper>
-          <S.SectionLabel>Horário: <S.SectionText>{event.schedule}</S.SectionText></S.SectionLabel>
-        </S.SectionWrapper>
+          </Styled.IconWrapper>
+          <Styled.SectionLabel>Horário: <Styled.SectionText>{event.schedule}</Styled.SectionText></Styled.SectionLabel>
+        </Styled.SectionWrapper>
         {event.type === 2 ? <></> : <>
-          <S.SectionWrapper>
-            <S.IconWrapper>
+          <Styled.SectionWrapper>
+            <Styled.IconWrapper>
               <Icon name="map-marker" size={16} color={colors.black} />
-            </S.IconWrapper>
-            <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>Local: <S.SectionText>{event.local}</S.SectionText></S.SectionLabel>
-          </S.SectionWrapper>
+            </Styled.IconWrapper>
+            <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>Local: <Styled.SectionText>{event.local}</Styled.SectionText></Styled.SectionLabel>
+          </Styled.SectionWrapper>
         </>}
-      </S.MiddleWrapper>
-      <S.RightWrapper>
+      </Styled.MiddleWrapper>
+      <Styled.RightWrapper>
         {type === 1 ? <>
           {status ?
-            <S.StatusLabel status={event.status}>
+            <Styled.StatusLabel status={event.status}>
               {event.status === 1 ? 'Aguardando Pagamento' : (event.status === 2 ? 'Aprovado' : 'Recusado')}
-            </S.StatusLabel> :
-            <S.TypeLabel>
+            </Styled.StatusLabel> :
+            <Styled.TypeLabel>
               {event.type === 1 ? 'Presencial' : 'Online'}
-            </S.TypeLabel>}
+            </Styled.TypeLabel>}
         </> : <></>}
-      </S.RightWrapper>
-    </S.Container>
+      </Styled.RightWrapper>
+    </Styled.Container>
   );
 };
 
