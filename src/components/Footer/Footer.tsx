@@ -35,7 +35,7 @@ const Footer: React.FC<IProps> = ({
             Meus Ingressos
           </S.IconLabel>
         </S.LabeledIconWrapper>
-        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Account' })}>
+        <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
           <S.IconWrapper active={index === 3}>
             <FontAwesome name="user" size={24} color={colors.white} />
           </S.IconWrapper>
@@ -52,7 +52,7 @@ const Footer: React.FC<IProps> = ({
           Meus Eventos
         </S.IconLabel>
       </S.LabeledIconWrapper>
-      <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Account' })}>
+      <S.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
         <S.IconWrapper active={index === 2}>
           <FontAwesome name="user" size={24} color={colors.white} />
         </S.IconWrapper>

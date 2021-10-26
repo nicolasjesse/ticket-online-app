@@ -11,7 +11,7 @@ const Header: React.FC<any> = (props: any) => {
         source={require('../../assets/logo-name.png')}
         style={{ tintColor: colors.primary }}
       />
-      {props?.route?.name === 'Catalog' ?
+      {props?.route?.name === 'Inventory' || props?.route?.name === 'Catalog' ?
         <S.FilterText onPress={() => { }}>Filtrar</S.FilterText> :
         <></>}
     </S.Header>

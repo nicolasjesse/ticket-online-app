@@ -6,6 +6,7 @@ import EventDetail from './screens/EventDetail/EventDetail';
 import Finish from './screens/Finish/Finish';
 import Inventory from './screens/Inventory/Inventory';
 import TicketDetail from './screens/TicketDetail/TicketDetail';
+import Profile from './screens/Profile/Profile';
 import Header from './components/Header/Header';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -48,6 +49,10 @@ const MainNavigator = () => (
       header: Header,
     }} />
     <MainStack.Screen name="TicketDetail" component={TicketDetail} options={{
+      headerShown: true,
+      header: Header,
+    }} />
+    <MainStack.Screen name="Profile" component={Profile} options={{
       headerShown: true,
       header: Header,
     }} />
