@@ -1,20 +1,24 @@
 import React from 'react';
-import * as S from './Header.style';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import * as Styled from './Header.style';
 import { colors } from '../../config/theme.json';
 
 const Header: React.FC<any> = (props: any) => {
 
   return (
-    <S.Header>
-      <S.LogoImage
+    <Styled.Header>
+      <Styled.LogoImage
         resizeMode={'contain'}
         source={require('../../assets/logo-name.png')}
         style={{ tintColor: colors.primary }}
       />
       {props?.route?.name === 'Inventory' || props?.route?.name === 'Catalog' ?
-        <S.FilterText onPress={() => { }}>Filtrar</S.FilterText> :
+        <Styled.FilterText onPress={() => { }}>Filtrar</Styled.FilterText> :
         <></>}
-    </S.Header>
+      {props?.route?.name === 'MyEvents' ?
+        <Styled.PlusButton><Icon name="plus-square-o" size={24} color={colors.primary} onPress={() => props.navigation.navigate('Main', { screen: 'AddEvent' })}/></Styled.PlusButton> :
+        <></>}
+    </Styled.Header>
   );
 };
 

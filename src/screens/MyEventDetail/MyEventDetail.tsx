@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import * as Styled from './EventDetail.style';
+import * as Styled from './MyEventDetail.style';
 import AppButton from '../../components/AppButton/AppButton';
 import { colors } from '../../config/theme.json';
 
-const event = { name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
+const event = { name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2, participants: 2 }
 
-const EventDetail: React.FC = ({
+const MyEventDetail: React.FC = ({
   navigation,
 }: any) => {
 
@@ -43,23 +43,21 @@ const EventDetail: React.FC = ({
         </> : <></>}
         <Styled.InfoItem>
           <Styled.InfoItemIconWrapper>
-            <Icon name="info" size={20} color={colors.black} />
+            <Icon name="group" size={16} color={colors.black} />
           </Styled.InfoItemIconWrapper>
           <Styled.InfoItemText>
-            {event.type === 1 ?
-              'Após adquirir um ingresso virtual, você deve usar a tela do dispositivo como entrada, você pode acessá-lo em Meus Ingressos.'
-              : 'O link do evento será disponibilizado após a conclusão do pagamento, você pode acessá-lo em Meus Ingressos'}
+            {event.participants} participantes
           </Styled.InfoItemText>
         </Styled.InfoItem>
       </Styled.InfoWrapper>
       <Styled.ButtonWrapper>
         <AppButton
-          title={'Comprar Ingresso'}
-          onPress={() => navigation.navigate('Main', { screen: 'Finish' }) } />
+          title={'Ver lista de participantes'}
+          onPress={() => navigation.navigate('Main', { screen: 'Participants' })} />
       </Styled.ButtonWrapper>
-      <Footer navigation={navigation} index={1} type={1} />
+      <Footer navigation={navigation} index={1} type={2} />
     </Styled.Container>
   );
 };
 
-export default EventDetail;
+export default MyEventDetail;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ListedEvent from '../../components/ListedEvent/ListedEvent';
 import Footer from '../../components/Footer/Footer';
-import * as S from './Inventory.style';
+import * as Styled from './Inventory.style';
 
 const tickets = [
   { id: '1', name: 'ECMAT', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 1, status: 1 },
@@ -13,12 +13,12 @@ const Inventory: React.FC = ({
 }: any) => {
 
   return (
-    <S.Container>
-      <S.TicketsWrapper>
+    <Styled.Container>
+      <Styled.TicketsWrapper>
         {tickets.map((event) => <ListedEvent event={event} onPress={() => navigation.navigate('Main', { screen: 'TicketDetail' })} key={event.id} status/>)}
-      </S.TicketsWrapper>
+      </Styled.TicketsWrapper>
       <Footer navigation={navigation} index={2} type={1} />
-    </S.Container>
+    </Styled.Container>
   );
 };
 

@@ -6,13 +6,14 @@ import { colors } from '../../config/theme.json';
 
 interface Props {
   error?: boolean;
+  width: number;
 }
 
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: ${0.78 * Dimensions.get('window').width}px;
+  width: ${(props: Props) => props.width * Dimensions.get('window').width}px;
   height: ${0.07 * Dimensions.get('window').height}px;
   padding-right: ${0.03 * Dimensions.get('window').width}px;
   border-style: solid;

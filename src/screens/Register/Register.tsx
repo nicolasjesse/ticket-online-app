@@ -4,7 +4,7 @@ import AppButton from '../../components/AppButton/AppButton';
 import { Picker } from '@react-native-picker/picker';
 import { Dimensions } from 'react-native';
 
-import * as S from './Register.style';
+import * as Styled from './Register.style';
 
 const Register: React.FC = ({
   navigation,
@@ -20,13 +20,13 @@ const Register: React.FC = ({
   };
 
   return (
-    <S.Container>
-      <S.TitleWrapper>
-        <S.Rectangle />
-        <S.Title>Cadastro</S.Title>
-      </S.TitleWrapper>
-      <S.Form>
-        <S.PickerWrapper>
+    <Styled.Container>
+      <Styled.TitleWrapper>
+        <Styled.Rectangle />
+        <Styled.Title>Cadastro</Styled.Title>
+      </Styled.TitleWrapper>
+      <Styled.Form>
+        <Styled.PickerWrapper>
           <Picker
             selectedValue={userType}
             style={{ flex: 1 }}
@@ -35,21 +35,21 @@ const Register: React.FC = ({
             <Picker.Item label="Consumidor" value={1} />
             <Picker.Item label="Organização" value={2} />
           </Picker>
-        </S.PickerWrapper>
+        </Styled.PickerWrapper>
         <AppInput placeholder="Insira o nome" value={name} onChange={(e) => setName(e)} />
         <AppInput placeholder="Insira o email" value={email} onChange={(e) => setEmail(e)} />
         <AppInput placeholder="Insira a senha" value={password} onChange={(e) => setPassword(e)} />
         <AppInput placeholder="Confirme a senha" value={password} onChange={(e) => setPassword(e)} />
-      </S.Form>
-      <S.SubmitButtonWrapper>
+      </Styled.Form>
+      <Styled.SubmitButtonWrapper>
         <AppButton title={'Concluir Cadastro'} onPress={handleRegister} />
-      </S.SubmitButtonWrapper>
-      <S.TermsView>
-        <S.TermsText>Ao criar uma conta, você concorda com nossos termos de uso. Já tem uma conta?
-          <S.TermsLinkText onPress={() => navigation.navigate('Auth', { screen: 'Login' })}> Entre aqui</S.TermsLinkText>
-        </S.TermsText>
-      </S.TermsView>
-    </S.Container>
+      </Styled.SubmitButtonWrapper>
+      <Styled.TermsView>
+        <Styled.TermsText>Ao criar uma conta, você concorda com nossos termos de uso. Já tem uma conta?
+          <Styled.TermsLinkText onPress={() => navigation.navigate('Auth', { screen: 'Login' })}> Entre aqui</Styled.TermsLinkText>
+        </Styled.TermsText>
+      </Styled.TermsView>
+    </Styled.Container>
   );
 };
 
