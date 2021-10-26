@@ -4,6 +4,10 @@ import normalize from 'react-native-normalize';
 import { Dimensions } from 'react-native';
 import { colors } from '../../config/theme.json';
 
+interface StatusProps {
+  status: number;
+}
+
 export const Container = styled.View`
   flex: 1;
   flex-direction: column;
@@ -25,8 +29,8 @@ export const Title = styled.Text`
   color: ${colors.black};
 `;
 
-export const EventImage = styled.Image`
-  margin-top: ${0.04 * Dimensions.get('window').height}px;
+export const QRCImage = styled.Image`
+  margin-top: ${0.01 * Dimensions.get('window').height}px;
   border-radius: 5px;
   height: ${0.35 * Dimensions.get('window').height}px;
   width: ${0.8 * Dimensions.get('window').width}px;
@@ -34,7 +38,8 @@ export const EventImage = styled.Image`
 
 export const InfoWrapper = styled.View`
   justify-content: center;
-  height: ${0.24 * Dimensions.get('window').height}px;
+  margin-top: ${0.03 * Dimensions.get('window').height}px;
+  height: ${0.3 * Dimensions.get('window').height}px;
 `;
 
 export const InfoItem = styled.View`
@@ -60,8 +65,23 @@ export const InfoItemIconWrapper = styled.View`
   border-width: 1px;
 `;
 
-export const ButtonWrapper = styled.View`
-  margin-top: ${0.02 * Dimensions.get('window').height}px;
-  height: ${0.045 * Dimensions.get('window').height}px;
-  width: ${0.9 * Dimensions.get('window').width}px;
+export const IdLabel = styled.Text`
+  font-size: ${normalize(18)}px;
+  color: ${colors.black};
+`;
+
+export const StatusLabel = styled.Text`
+  font-size: ${normalize(18)}px;
+  color: ${colors.black};
+`;
+
+export const StatusValue = styled.Text`
+  color: ${(props: StatusProps) => props.status === 1 ? colors.yellow : (props.status === 2 ? colors.green : colors.red)};
+`;
+
+export const MainInfoWrapper = styled.View`
+  height: ${0.35 * Dimensions.get('window').height}px;
+  width: ${0.8 * Dimensions.get('window').width}px;
+  margin-top: ${0.05 * Dimensions.get('window').height}px;
+  justify-content: flex-start;
 `;

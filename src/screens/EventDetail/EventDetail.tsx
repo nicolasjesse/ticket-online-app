@@ -5,7 +5,7 @@ import * as S from './EventDetail.style';
 import AppButton from '../../components/AppButton/AppButton';
 import { colors } from '../../config/theme.json';
 
-const event = { name: 'Django Girls', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
+const event = { name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
 
 const EventDetail: React.FC = ({
   navigation,
@@ -17,15 +17,15 @@ const EventDetail: React.FC = ({
         <S.Title>{event.name} ({event.type === 1 ? 'Presencial' : 'Online'})</S.Title>
       </S.TitleWrapper>
       <S.EventImage
-        resizeMode={'cover'}
-        source={require('../../assets/django-logo.jpg')}
+        resizeMode={'contain'}
+        source={require('../../assets/event-logo.jpg')}
       />
       <S.InfoWrapper>
         <S.InfoItem>
           <S.InfoItemIconWrapper>
             <Icon name="dollar" size={20} color={colors.black} />
           </S.InfoItemIconWrapper>
-          <S.InfoItemText>R$ {event.price}</S.InfoItemText>
+          <S.InfoItemText>{event.price <= 0 ? 'Gratuito' : `R$ ${event.price}`}</S.InfoItemText>
         </S.InfoItem>
         <S.InfoItem>
           <S.InfoItemIconWrapper>

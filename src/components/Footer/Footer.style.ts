@@ -35,7 +35,7 @@ export const IconWrapper = styled.View`
 `;
 
 export const IconLabel = styled.Text`
-  font-size: ${normalize(11)}px;
+  font-size: ${normalize(12)}px;
   font-weight: bold;
   color: ${(props: IconWrapperProps) => props.active ? colors.primary : colors.gray};
 `;

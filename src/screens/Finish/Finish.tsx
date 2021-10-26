@@ -6,7 +6,7 @@ import AppButton from '../../components/AppButton/AppButton';
 import ListedEvent from '../../components/ListedEvent/ListedEvent';
 import { colors } from '../../config/theme.json';
 
-const event = { name: 'Django Girls', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
+const event = { name: 'ECMAT', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
 
 const Finish: React.FC = ({
   navigation,

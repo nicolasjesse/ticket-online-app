@@ -4,8 +4,8 @@ import Footer from '../../components/Footer/Footer';
 import * as S from './Catalog.style';
 
 const events = [
-  { name: 'Django Girls', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 1 },
-  { name: 'Django Girls 2', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 },
+  { name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 1 },
+  { name: 'ECMAT 2', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 },
 ]
 
 const Catalog: React.FC = ({

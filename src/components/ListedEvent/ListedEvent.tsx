@@ -20,7 +20,7 @@ const ListedEvent: React.FC<IProps> = ({
       <S.LeftWrapper>
         <S.EventImage
           resizeMode={'cover'}
-          source={require('../../assets/django-logo.jpg')}
+          source={require('../../assets/event-logo.jpg')}
         />
         <S.NameLabel>{event.name}</S.NameLabel>
       </S.LeftWrapper>
@@ -30,7 +30,7 @@ const ListedEvent: React.FC<IProps> = ({
             <Icon name="dollar" size={16} color={colors.black} />
           </S.IconWrapper>
           <S.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
-            Preço: <S.SectionText>{event.price}</S.SectionText>
+            Preço: <S.SectionText>{event.price <= 0 ? 'Gratuito' : `R$ ${event.price}`}</S.SectionText>
           </S.SectionLabel>
         </S.SectionWrapper>
         <S.SectionWrapper>
