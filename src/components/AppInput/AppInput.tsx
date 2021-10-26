@@ -8,6 +8,7 @@ interface IProps {
   secureTextEntry?: boolean | false;
   value?: string;
   error?: boolean;
+  width?: number;
   password?: boolean;
   onEyeClick?: () => void;
   onChange: (text: string) => void;
@@ -16,6 +17,7 @@ interface IProps {
 const AppInput: React.FC<IProps> = ({
   placeholder,
   secureTextEntry,
+  width = 0.78,
   value = '',
   error = false,
   password = false,
@@ -24,7 +26,7 @@ const AppInput: React.FC<IProps> = ({
 }) => {
 
   return (
-    <Styled.Container error={error}>
+    <Styled.Container error={error} width={width}>
       <Styled.Input placeholder={placeholder} secureTextEntry={secureTextEntry} value={value} onChangeText={(e) => onChange(e)} placeholderTextColor={colors.gray} />
       {password ? (secureTextEntry ? <Icon name="eye-off" size={24} onPress={onEyeClick} /> : <Icon name="eye" size={24} onPress={onEyeClick} />) : <></>}
     </Styled.Container>

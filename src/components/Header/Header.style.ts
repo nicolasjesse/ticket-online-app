@@ -24,3 +24,10 @@ export const FilterText = styled.Text`
   right: ${0.02 * Dimensions.get('window').width}px;
   color: ${colors.primary};
 `;
+
+export const PlusButton = styled.View`
+  position: absolute;
+  top: ${0.05 * Dimensions.get('window').height}px;
+  right: ${0.03 * Dimensions.get('window').width}px;
+  color: ${colors.primary};
+`;
