@@ -18,7 +18,7 @@ const AppButton: React.FC<IProps> = ({
   disabled = false,
   title = '',
   color = colors.white,
-  backgroundColor = colors.default,
+  backgroundColor = colors.primary,
   fontSize = 16,
   bold = true,
 }) => {
@@ -29,7 +29,7 @@ const AppButton: React.FC<IProps> = ({
         {title}
       </S.Text>
     </S.Container>
-  )
-}
+  );
+};
 
 export default AppButton;

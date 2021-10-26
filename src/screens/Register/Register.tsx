@@ -16,7 +16,7 @@ const Register: React.FC = ({
   const [userType, setUserType] = useState(1)
 
   const handleRegister = () => {
-    navigation.push('Auth', { screen: 'Login' })
+    navigation.navigate('Auth', { screen: 'Login' })
   };
 
   return (
@@ -46,7 +46,7 @@ const Register: React.FC = ({
       </S.SubmitButtonWrapper>
       <S.TermsView>
         <S.TermsText>Ao criar uma conta, você concorda com nossos termos de uso. Já tem uma conta?
-          <S.TermsLinkText onPress={() => navigation.push('Auth', { screen: 'Login' })}> Entre aqui</S.TermsLinkText>
+          <S.TermsLinkText onPress={() => navigation.navigate('Auth', { screen: 'Login' })}> Entre aqui</S.TermsLinkText>
         </S.TermsText>
       </S.TermsView>
     </S.Container>

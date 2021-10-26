@@ -13,6 +13,7 @@ const Login: React.FC = ({
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleLogin = () => {
+    navigation.navigate('Main', { screen: 'Catalog' });
   };
 
   return (
@@ -39,14 +40,14 @@ const Login: React.FC = ({
           title={'Esqueceu a senha?'}
           onPress={() => { }}
           backgroundColor={'transparent'}
-          color={colors.default} />
+          color={colors.primary} />
       </S.ForgetPasswordWrapper>
       <S.NoAccountWrapper>
         <AppButton
           title={'Não tenho conta ainda'}
-          onPress={() => navigation.push('Auth', { screen: 'Register' })}
+          onPress={() => navigation.navigate('Auth', { screen: 'Register' })}
           backgroundColor={'transparent'}
-          color={colors.default + 'CC'}
+          color={colors.primary + 'CC'}
           bold={false}
           fontSize={14} />
       </S.NoAccountWrapper>

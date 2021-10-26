@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import normalize from 'react-native-normalize';
+
 import { Dimensions } from 'react-native';
 import { colors } from '../../config/theme.json';
 
