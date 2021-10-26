@@ -13,7 +13,7 @@ const Login: React.FC = ({
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleLogin = () => {
-    navigation.navigate('Main', { screen: 'Catalog' });
+      navigation.navigate('Main', { screen: 'MyEvents' });
   };
 
   return (

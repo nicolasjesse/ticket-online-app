@@ -9,6 +9,7 @@ interface IconWrapperProps {
 }
 
 export const Footer = styled.View`
+  background-color: ${colors.white};
   flex-direction: row;
   justify-content: center;
   position: absolute;
