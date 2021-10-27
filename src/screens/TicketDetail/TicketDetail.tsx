@@ -7,8 +7,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Styled from './TicketDetail.style';
 import { colors } from '../../config/theme.json';
 
-const ticket = { id: '37724582129', name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 1, status: 2, url: 'www.google.com' }
-
 const TicketDetail: React.FC = ({
   navigation,
 }: any) => {
