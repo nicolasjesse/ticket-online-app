@@ -19,6 +19,13 @@ const initialState: reducers.TicketReducer = {
       eventType: 0,
       userId: '',
     },
+    user: {
+      id: '',
+      name: '',
+      email: '',
+      password: '',
+      profileType: 0,
+    },
     paymentStatus: 0,
   },
 };

@@ -45,7 +45,7 @@ export const Elipse = styled.View`
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background-color: ${colors.primary+'99'};
+  background-color: ${colors.primary + '99'};
 `;
 
 export const FaceImage = styled.Image`
@@ -70,7 +70,7 @@ export const SectionLabel = styled.Text`
   font-size: ${normalize(14)}px;
   font-weight: bold;
   color: ${colors.black};
-  max-width: ${0.611 * Dimensions.get('window').width}px;
+  width: ${0.611 * Dimensions.get('window').width}px;
 `;
 
 export const SectionText = styled.Text`

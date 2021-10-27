@@ -15,12 +15,12 @@ export const cleanDetail = () => async (
 export const create = (params: models.Ticket) => async (
   dispatch: any,
 ) => {
-    const payload = await TicketRequests.create(params);
+  const payload = await TicketRequests.create(params);
 
-    dispatch({
-      type: TICKET_DETAIL,
-      payload,
-    });
+  dispatch({
+    type: TICKET_DETAIL,
+    payload,
+  });
 };
 
 export const getReport = (params: models.TicketGetRequest) => async (

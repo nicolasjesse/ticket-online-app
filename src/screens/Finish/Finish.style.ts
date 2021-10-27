@@ -32,7 +32,7 @@ export const TicketsWrapper = styled.View`
   align-items: center;
   border-top-width: 1px;
   border-bottom-width: 1px;
-  border-color: ${colors.gray+'55'};
+  border-color: ${colors.gray + '55'};
   `;
 
 export const OptionsWrapper = styled.View`
@@ -45,7 +45,7 @@ export const OptionItem = styled.View`
   `;
 
 export const OptionItemLabel = styled.Text`
-  color: ${colors.black+'AA'};
+  color: ${colors.black + 'AA'};
   margin-left: ${0.02 * Dimensions.get('window').width}px;
   `;
 
@@ -59,7 +59,7 @@ export const OptionItemButton = styled.TouchableOpacity`
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  background-color: ${colors.black+'88'};
+  background-color: ${colors.black + '88'};
   `;
 
 export const OptionItemButtonLabel = styled.Text`

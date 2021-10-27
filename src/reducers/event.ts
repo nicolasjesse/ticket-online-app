@@ -3,7 +3,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialState: reducers.EventReducer = {
-  list: [], 
+  list: [],
   detail: {
     id: '',
     name: '',

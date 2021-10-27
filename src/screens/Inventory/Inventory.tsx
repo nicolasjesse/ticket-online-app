@@ -29,7 +29,7 @@ const Inventory: React.FC = ({
             event={ticket.event!}
             paymentStatus={ticket.paymentStatus}
             onPress={() => handleClickTicket(ticket.id!)}
-            key={ticket.event!.id}
+            key={ticket.id}
             status
           />))}
       </Styled.TicketsWrapper>

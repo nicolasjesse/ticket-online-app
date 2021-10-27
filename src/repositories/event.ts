@@ -2,10 +2,10 @@ import getInstance from './instance';
 import { API_URL } from '../config/env.json';
 
 const EventApi = {
-  getReport: async () => {
+  getReport: async (params: models.EventGetRequest) => {
     const instance = await getInstance();
 
-    const { data } = await instance.get(`${API_URL}/events`);
+    const { data } = await instance.get(`${API_URL}/events`, { params });
 
     return data;
   },

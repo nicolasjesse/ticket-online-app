@@ -24,7 +24,7 @@ const AppButton: React.FC<IProps> = ({
 }) => {
 
   return (
-    <Styled.Container backgroundColor={backgroundColor} onPress={disabled? null : onPress}>
+    <Styled.Container backgroundColor={backgroundColor} onPress={disabled ? null : onPress}>
       <Styled.Text color={color} bold={bold} fontSize={fontSize}>
         {title}
       </Styled.Text>

@@ -18,7 +18,7 @@ const Catalog: React.FC = ({
   };
 
   useEffect(() => {
-    dispatch(EventActions.getReport());
+    dispatch(EventActions.getReport({}));
   }, []);
 
   return (

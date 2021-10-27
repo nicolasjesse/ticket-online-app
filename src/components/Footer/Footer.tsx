@@ -44,22 +44,22 @@ const Footer: React.FC<IProps> = ({
           </Styled.IconLabel>
         </Styled.LabeledIconWrapper>
       </> : <>
-      <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'MyEvents' })}>
-        <Styled.IconWrapper active={index === 1}>
-          <MaterialIcons name="store" size={26} color={colors.white} />
-        </Styled.IconWrapper>
-        <Styled.IconLabel active={index === 1}>
-          Meus Eventos
-        </Styled.IconLabel>
-      </Styled.LabeledIconWrapper>
-      <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
-        <Styled.IconWrapper active={index === 2}>
-          <FontAwesome name="user" size={24} color={colors.white} />
-        </Styled.IconWrapper>
-        <Styled.IconLabel active={index === 2}>
-          Minha conta
-        </Styled.IconLabel>
-      </Styled.LabeledIconWrapper>
+        <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'MyEvents' })}>
+          <Styled.IconWrapper active={index === 1}>
+            <MaterialIcons name="store" size={26} color={colors.white} />
+          </Styled.IconWrapper>
+          <Styled.IconLabel active={index === 1}>
+            Meus Eventos
+          </Styled.IconLabel>
+        </Styled.LabeledIconWrapper>
+        <Styled.LabeledIconWrapper onPress={() => navigation.navigate('Main', { screen: 'Profile' })}>
+          <Styled.IconWrapper active={index === 2}>
+            <FontAwesome name="user" size={24} color={colors.white} />
+          </Styled.IconWrapper>
+          <Styled.IconLabel active={index === 2}>
+            Minha conta
+          </Styled.IconLabel>
+        </Styled.LabeledIconWrapper>
       </>}
     </Styled.Footer>
   )

@@ -2,13 +2,13 @@ import React from 'react';
 import * as Styled from './ListedParticipant.style';
 
 interface IProps {
-  participant: any;
+  ticket: models.Ticket;
   status?: boolean;
   type?: number;
 }
 
 const ListedParticipant: React.FC<IProps> = ({
-  participant,
+  ticket,
 }) => {
 
   return (
@@ -23,17 +23,17 @@ const ListedParticipant: React.FC<IProps> = ({
       </Styled.LeftWrapper>
       <Styled.RightWrapper>
         <Styled.SectionWrapper>
-          <Styled.SectionLabel>ID: <Styled.SectionText>{participant.id}</Styled.SectionText></Styled.SectionLabel>
+          <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>ID: <Styled.SectionText>{ticket?.id}</Styled.SectionText></Styled.SectionLabel>
         </Styled.SectionWrapper>
         <Styled.SectionWrapper>
           <Styled.SectionLabel>Status:
-            <Styled.StatusLabel status={participant.status}>
-              {participant.status === 1 ? ' Aguardando Pagamento' : (participant.status === 2 ? ' Aprovado' : ' Recusado')}
+            <Styled.StatusLabel status={ticket?.paymentStatus}>
+              {ticket?.paymentStatus === 1 ? ' Aguardando Pagamento' : (ticket?.paymentStatus === 2 ? ' Aprovado' : ' Recusado')}
             </Styled.StatusLabel>
           </Styled.SectionLabel>
         </Styled.SectionWrapper>
         <Styled.SectionWrapper>
-          <Styled.SectionLabel>Nome: <Styled.SectionText>{participant.name}</Styled.SectionText></Styled.SectionLabel>
+          <Styled.SectionLabel>Nome: <Styled.SectionText>{ticket?.user?.name}</Styled.SectionText></Styled.SectionLabel>
         </Styled.SectionWrapper>
       </Styled.RightWrapper>
     </Styled.Container>

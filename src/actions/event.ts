@@ -15,18 +15,18 @@ export const cleanDetail = () => async (
 export const create = (params: models.Event) => async (
   dispatch: any,
 ) => {
-    const payload = await EventRequests.create(params);
+  const payload = await EventRequests.create(params);
 
-    dispatch({
-      type: EVENT_DETAIL,
-      payload,
-    });
+  dispatch({
+    type: EVENT_DETAIL,
+    payload,
+  });
 };
 
-export const getReport = () => async (
+export const getReport = (params: models.EventGetRequest) => async (
   dispatch: any,
 ) => {
-  const payload = await EventRequests.getReport();
+  const payload = await EventRequests.getReport(params);
 
   dispatch({
     type: EVENT_REPORT,

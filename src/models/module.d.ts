@@ -4,7 +4,7 @@ export type User = {
   id?: string;
   name: string;
   email: string;
-  password: string;
+  password?: string | '';
   profileType: number;
 };
 
@@ -18,14 +18,16 @@ export type Event = {
   quantity: number;
   eventType: number;
   userId: string;
+  tickets?: Ticket[];
 };
 
 export type Ticket = {
   id?: string;
   paymentStatus: number;
-  userId: string;
+  userId?: string | '';
   eventId?: string | '';
   event?: Event;
+  user?: User;
 };
 
 export type AuthRequest = {
@@ -34,6 +36,11 @@ export type AuthRequest = {
 };
 
 export type TicketGetRequest = {
+  userId?: string;
+  eventId?: string;
+};
+
+export type EventGetRequest = {
   userId?: string;
 };
 

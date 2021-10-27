@@ -26,7 +26,7 @@ export const Title = styled.Text`
 `;
 
 export const EventImage = styled.Image`
-  margin-top: ${0.04 * Dimensions.get('window').height}px;
+  margin-top: ${0.01 * Dimensions.get('window').height}px;
   border-radius: 5px;
   height: ${0.35 * Dimensions.get('window').height}px;
   width: ${0.8 * Dimensions.get('window').width}px;
@@ -61,7 +61,7 @@ export const InfoItemIconWrapper = styled.View`
 `;
 
 export const ButtonWrapper = styled.View`
-  margin-top: ${0.02 * Dimensions.get('window').height}px;
+  margin-top: ${0.06 * Dimensions.get('window').height}px;
   height: ${0.045 * Dimensions.get('window').height}px;
   width: ${0.9 * Dimensions.get('window').width}px;
 `;
