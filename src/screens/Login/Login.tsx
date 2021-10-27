@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useReduxState } from '../../hooks/useReduxState';
+import * as AuthActions from '../../actions/auth';
 import AppInput from '../../components/AppInput/AppInput';
 import AppButton from '../../components/AppButton/AppButton';
 import { colors } from '../../config/theme.json';
@@ -7,14 +10,26 @@ import * as Styled from './Login.style';
 const Login: React.FC = ({
   navigation,
 }: any) => {
+  const dispatch = useDispatch();
+  const { auth } = useReduxState();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [visiblePassword, setVisiblePassword] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleLogin = () => {
-      navigation.navigate('Main', { screen: 'MyEvents' });
+    if (email && password) {
+      dispatch(AuthActions.authenticate({ email, password }));
+    }
   };
+
+  useEffect(() => {
+    if (auth.checkLogged && auth.me.profileType === 1) {
+      navigation.navigate('Main', { screen: 'Catalog' });
+    } else if (auth.checkLogged && auth.me.profileType === 2) {
+      navigation.navigate('Main', { screen: 'MyEvents' });
+    }
+  }, [auth.authToken])
 
   return (
     <Styled.Container>
@@ -28,9 +43,9 @@ const Login: React.FC = ({
           placeholder="Insira a senha"
           value={password}
           onChange={(e) => setPassword(e)}
-          secureTextEntry={!visiblePassword}
+          secureTextEntry={!isVisible}
           password
-          onEyeClick={() => setVisiblePassword(!visiblePassword)} />
+          onEyeClick={() => setIsVisible(!isVisible)} />
       </Styled.Form>
       <Styled.EnterButtonWrapper>
         <AppButton title={'Entrar'} onPress={handleLogin} />

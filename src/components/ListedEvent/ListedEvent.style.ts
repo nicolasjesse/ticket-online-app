@@ -76,7 +76,7 @@ export const SectionText = styled.Text`
 
 export const TypeLabel = styled.Text`
   font-size: ${normalize(12)}px;
-  color: ${colors.black};
+  color: ${colors.primary};
   font-weight: bold;
 `;
 

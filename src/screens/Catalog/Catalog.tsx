@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useReduxState } from '../../hooks/useReduxState';
+import * as EventActions from '../../actions/event';
 import ListedEvent from '../../components/ListedEvent/ListedEvent';
 import Footer from '../../components/Footer/Footer';
 import * as Styled from './Catalog.style';
 
-const events = [
-  { name: 'ECMAT', price: 0, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 1 },
-  { name: 'ECMAT 2', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 },
-]
-
 const Catalog: React.FC = ({
   navigation,
 }: any) => {
+  const dispatch = useDispatch();
+  const { event } = useReduxState();
+
+  const handleEventClick = (id: string) => {
+    dispatch(EventActions.getDetail(id));
+    navigation.navigate('Main', { screen: 'EventDetail' });
+  };
+
+  useEffect(() => {
+    dispatch(EventActions.getReport({}));
+  }, []);
 
   return (
     <Styled.Container>
       <Styled.EventsWrapper>
-        {events.map((event) => <ListedEvent event={event} onPress={() => navigation.navigate('Main', { screen: 'EventDetail' })} key={event.name} />)}
+        {event.list.map((ev: models.Event) => (
+          <ListedEvent
+            event={ev}
+            onPress={() => handleEventClick(ev.id!)}
+            key={ev.id} />
+        ))}
       </Styled.EventsWrapper>
       <Footer navigation={navigation} index={1} type={1} />
     </Styled.Container>

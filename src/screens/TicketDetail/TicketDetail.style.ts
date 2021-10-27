@@ -24,7 +24,7 @@ export const TitleWrapper = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-left: ${0.05 * Dimensions.get('window').width}px;
+  margin-left: ${0.1 * Dimensions.get('window').width}px;
   font-size: ${normalize(22)}px;
   color: ${colors.black};
 `;
@@ -38,7 +38,7 @@ export const QRCImage = styled.Image`
 
 export const InfoWrapper = styled.View`
   justify-content: center;
-  margin-top: ${0.03 * Dimensions.get('window').height}px;
+  margin-top: ${0.06 * Dimensions.get('window').height}px;
   height: ${0.3 * Dimensions.get('window').height}px;
 `;
 
@@ -66,12 +66,12 @@ export const InfoItemIconWrapper = styled.View`
 `;
 
 export const IdLabel = styled.Text`
-  font-size: ${normalize(18)}px;
+  font-size: ${normalize(16)}px;
   color: ${colors.black};
 `;
 
 export const StatusLabel = styled.Text`
-  font-size: ${normalize(18)}px;
+  font-size: ${normalize(16)}px;
   color: ${colors.black};
 `;
 
@@ -82,6 +82,6 @@ export const StatusValue = styled.Text`
 export const MainInfoWrapper = styled.View`
   height: ${0.35 * Dimensions.get('window').height}px;
   width: ${0.8 * Dimensions.get('window').width}px;
-  margin-top: ${0.05 * Dimensions.get('window').height}px;
+  margin-top: ${0.03 * Dimensions.get('window').height}px;
   justify-content: flex-start;
 `;

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useReduxState } from '../../hooks/useReduxState';
+import * as EventActions from '../../actions/event';
 import AppInput from '../../components/AppInput/AppInput';
 import AppButton from '../../components/AppButton/AppButton';
 import Footer from '../../components/Footer/Footer';
@@ -9,6 +12,8 @@ import * as Styled from './AddEvent.style';
 const AddEvent: React.FC = ({
   navigation,
 }: any) => {
+  const dispatch = useDispatch();
+  const { auth } = useReduxState();
 
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
@@ -19,7 +24,19 @@ const AddEvent: React.FC = ({
   const [eventType, seteventType] = useState(1)
 
   const handleRegister = () => {
-    navigation.navigate('Main', { screen: 'MyEvents' })
+    if (name && date && schedule && price && local) {
+      dispatch(EventActions.create({
+        name,
+        date,
+        schedule,
+        price: parseFloat(price.replace(',','.')),
+        quantity: parseInt(quantity),
+        local, 
+        eventType,
+        userId: auth.me.id!
+      }))
+      navigation.navigate('Main', { screen: 'MyEvents' })
+    };
   };
 
   return (
@@ -32,7 +49,7 @@ const AddEvent: React.FC = ({
           <Picker
             selectedValue={eventType}
             style={{ flex: 1 }}
-            onValueChange={(itemValue: any, itemIndex: any) => seteventType(itemValue)}
+            onValueChange={(itemValue: any) => seteventType(itemValue)}
           >
             <Picker.Item label="Presencial" value={1} />
             <Picker.Item label="Online" value={2} />

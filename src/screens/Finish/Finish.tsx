@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useReduxState } from '../../hooks/useReduxState';
+import * as TicketActions from '../../actions/ticket';
 import Footer from '../../components/Footer/Footer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Styled from './Finish.style';
@@ -6,12 +9,22 @@ import AppButton from '../../components/AppButton/AppButton';
 import ListedEvent from '../../components/ListedEvent/ListedEvent';
 import { colors } from '../../config/theme.json';
 
-const event = { name: 'ECMAT', price: 4.99, date: '28/10', schedule: '18h', local: 'IFPB Cajazeiras', type: 2 }
-
 const Finish: React.FC = ({
   navigation,
 }: any) => {
+  const dispatch = useDispatch();
+  const { event, auth } = useReduxState();
+
   const [paymentOption, setPaymentOption] = useState(1);
+
+  const handleClickBuy = () => {
+    dispatch(TicketActions.create({
+      paymentStatus: 1,
+      eventId: event.detail.id!,
+      userId: auth.me.id!
+    }))
+    navigation.navigate('Main', { screen: 'Inventory' });
+  };
 
   return (
     <Styled.Container>
@@ -28,16 +41,16 @@ const Finish: React.FC = ({
         </Styled.OptionItem>
       </Styled.OptionsWrapper>
       <Styled.TicketsWrapper>
-        <ListedEvent event={event} />
+        <ListedEvent event={event.detail} />
       </Styled.TicketsWrapper>
       <Styled.TotalTextWrapper>
         <Styled.TotalText>Total</Styled.TotalText>
-        <Styled.TotalText>R$ {event.price}</Styled.TotalText>
+        <Styled.TotalText>R$ {event.detail.price.toFixed(2).replace('.', ',')}</Styled.TotalText>
       </Styled.TotalTextWrapper>
       <Styled.ButtonWrapper>
         <AppButton
           title={'Efetuar Compra'}
-          onPress={() => navigation.navigate('Main', { screen: 'Inventory' })}
+          onPress={() => handleClickBuy()}
         />
       </Styled.ButtonWrapper>
       <Footer navigation={navigation} index={1} type={1} />

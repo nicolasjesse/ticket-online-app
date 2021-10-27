@@ -23,7 +23,7 @@ export const ProfileElipse = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background-color: ${colors.primary+'99'};
+  background-color: ${colors.primary + '99'};
 `;
 
 export const FaceImage = styled.Image`
@@ -60,7 +60,7 @@ export const InfoLine = styled.TouchableOpacity`
   height: ${0.03 * Dimensions.get('window').height}px;
   width: ${0.8 * Dimensions.get('window').width}px;
   border-bottom-width: 1px;
-  border-color: ${colors.gray+'AA'};
+  border-color: ${colors.gray + 'AA'};
 `;
 
 export const InfoLineText = styled.Text`
@@ -70,7 +70,7 @@ export const InfoLineText = styled.Text`
 `;
 
 export const ButtonWrapper = styled.View`
-  margin-top: ${0.02 * Dimensions.get('window').height}px;
+  margin-top: ${0.08 * Dimensions.get('window').height}px;
   height: ${0.05 * Dimensions.get('window').height}px;
   width: ${0.38 * Dimensions.get('window').width}px;
 `;

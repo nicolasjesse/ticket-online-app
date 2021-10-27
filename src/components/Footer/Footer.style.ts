@@ -14,10 +14,10 @@ export const Footer = styled.View`
   justify-content: center;
   position: absolute;
   bottom: 0;
-  height: ${0.09 * Dimensions.get('window').height}px;
+  height: ${0.085 * Dimensions.get('window').height}px;
   width: ${1 * Dimensions.get('window').width}px;
   border: 1px;
-  border-color: ${colors.primary+'66'};
+  border-color: ${colors.primary + '66'};
 `;
 
 export const LabeledIconWrapper = styled.TouchableOpacity`
