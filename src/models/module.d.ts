@@ -1,17 +1,29 @@
 export as namespace models;
 
 export type User = {
-  id?: string | '';
-  name: string | '';
-  email: string | '';
-  password: string | '';
-  profileType?: number | 1;
+  id?: string;
+  name: string;
+  email: string;
+  password: string;
+  profileType: number;
 };
 
-export type AuthReducer = {
-  checkLogged: boolean;
-  authToken: models.AuthResponse;
-  me: models.User;
+export type Event = {
+  id?: string;
+  name: string;
+  local: string;
+  date: string;
+  schedule: string;
+  price: number;
+  quantity: number;
+  eventType: number;
+  userId: string;
+};
+
+export type Ticket = {
+  paymentStatus: number;
+  userId: string;
+  eventId: string;
 };
 
 export type AuthRequest = {

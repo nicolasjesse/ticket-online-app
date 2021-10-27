@@ -6,10 +6,12 @@ export type AuthReducer = {
   me: models.User;
 };
 
-export type AuthResponse = {
-  token: string | null;
+export type EventReducer = {
+  list: models.Event[];
+  detail: models.Event;
 };
 
 export type RootReducer = {
   auth: AuthReducer;
+  event: EventReducer;
 };

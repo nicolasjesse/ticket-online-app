@@ -8,11 +8,13 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from './auth';
+import eventReducer from './event';
 
 const store: Store<any, AnyAction> = createStore(
   combineReducers(
     {
       auth: authReducer,
+      event: eventReducer,
     },
   ),
   compose(applyMiddleware(thunk)),

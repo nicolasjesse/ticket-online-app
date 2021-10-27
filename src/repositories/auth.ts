@@ -19,7 +19,7 @@ const AuthApi = {
   register: async (userData: models.User) => {
     const instance = await getInstance();
 
-    const { data } = await instance.post(`${API_URL}/users/create`, userData);
+    const { data } = await instance.post(`${API_URL}/users/`, userData);
 
     return data;
   },

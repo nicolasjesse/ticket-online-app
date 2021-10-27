@@ -33,7 +33,11 @@ const ListedEvent: React.FC<IProps> = ({
               <Icon name="dollar" size={16} color={colors.black} />
             </Styled.IconWrapper>
             <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
-              Preço: <Styled.SectionText>{event.price <= 0 ? 'Gratuito' : `R$ ${event.price}`}</Styled.SectionText>
+              Preço:
+              <Styled.SectionText>
+                {event.price <= 0 ? 'Gratuito' :
+                  ` R$ ${event.price.toFixed(2).replace('.', ',')}`}
+              </Styled.SectionText>
             </Styled.SectionLabel>
           </Styled.SectionWrapper> :
           <Styled.SectionWrapper>
@@ -56,7 +60,7 @@ const ListedEvent: React.FC<IProps> = ({
           </Styled.IconWrapper>
           <Styled.SectionLabel>Horário: <Styled.SectionText>{event.schedule}</Styled.SectionText></Styled.SectionLabel>
         </Styled.SectionWrapper>
-        {event.type === 2 ? <></> : <>
+        {event.eventType === 2 ? <></> : <>
           <Styled.SectionWrapper>
             <Styled.IconWrapper>
               <Icon name="map-marker" size={16} color={colors.black} />
@@ -72,7 +76,7 @@ const ListedEvent: React.FC<IProps> = ({
               {event.status === 1 ? 'Aguardando Pagamento' : (event.status === 2 ? 'Aprovado' : 'Recusado')}
             </Styled.StatusLabel> :
             <Styled.TypeLabel>
-              {event.type === 1 ? 'Presencial' : 'Online'}
+              {event.eventType === 1 ? 'Presencial' : 'Online'}
             </Styled.TypeLabel>}
         </> : <></>}
       </Styled.RightWrapper>
