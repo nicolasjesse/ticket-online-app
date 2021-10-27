@@ -24,12 +24,12 @@ const Login: React.FC = ({
   };
 
   useEffect(() => {
-    if (auth.me.profileType === 1) {
-      navigation.navigate('Main', { screen: 'Catalog' })
-    } else if (auth.me.profileType === 2) {
-      navigation.navigate('Main', { screen: 'MyEvents' })
+    if (auth.checkLogged && auth.me.profileType === 1) {
+      navigation.navigate('Main', { screen: 'Catalog' });
+    } else if (auth.checkLogged && auth.me.profileType === 2) {
+      navigation.navigate('Main', { screen: 'MyEvents' });
     }
-  }, [auth.me])
+  }, [auth.authToken])
 
   return (
     <Styled.Container>

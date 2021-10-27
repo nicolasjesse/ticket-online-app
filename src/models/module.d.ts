@@ -21,14 +21,20 @@ export type Event = {
 };
 
 export type Ticket = {
+  id?: string;
   paymentStatus: number;
   userId: string;
-  eventId: string;
+  eventId?: string | '';
+  event?: Event;
 };
 
 export type AuthRequest = {
   email: string | null;
   password: string | null;
+};
+
+export type TicketGetRequest = {
+  userId?: string;
 };
 
 export type AuthResponse = {

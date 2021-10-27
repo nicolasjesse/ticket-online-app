@@ -7,7 +7,7 @@ export const Container = styled.View`
   flex: 1;
   flex-direction: column;
   background-color: ${colors.white};
-  padding-bottom: ${0.09 * Dimensions.get('window').height}px;
+  padding-bottom: ${0.095 * Dimensions.get('window').height}px;
 `;
 
 export const EventsWrapper = styled.ScrollView.attrs({

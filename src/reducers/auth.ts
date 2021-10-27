@@ -9,7 +9,7 @@ const initialState: reducers.AuthReducer = {
     name: '',
     email: '',
     password: '',
-    profileType: 1,
+    profileType: 0,
   },
   authToken: {
     token: null,

@@ -12,6 +12,17 @@ export const cleanDetail = () => async (
   });
 };
 
+export const create = (params: models.Event) => async (
+  dispatch: any,
+) => {
+    const payload = await EventRequests.create(params);
+
+    dispatch({
+      type: EVENT_DETAIL,
+      payload,
+    });
+};
+
 export const getReport = () => async (
   dispatch: any,
 ) => {
@@ -44,4 +55,8 @@ export const update = (id?: string, params?: any) => async (
     type: EVENT_DETAIL,
     payload,
   });
+};
+
+export const remove = (id: string) => async () => {
+  await EventRequests.remove(id);
 };

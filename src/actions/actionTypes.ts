@@ -8,3 +8,7 @@ export const AUTH_REGISTER = 'AUTH_REGISTER';
 // event types
 export const EVENT_DETAIL = 'EVENT_DETAIL';
 export const EVENT_REPORT = 'EVENT_REPORT';
+
+// ticket types
+export const TICKET_DETAIL = 'TICKET_DETAIL';
+export const TICKET_REPORT = 'TICKET_REPORT';

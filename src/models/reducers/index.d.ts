@@ -11,7 +11,13 @@ export type EventReducer = {
   detail: models.Event;
 };
 
+export type TicketReducer = {
+  list: models.Ticket[];
+  detail: models.Ticket;
+};
+
 export type RootReducer = {
   auth: AuthReducer;
   event: EventReducer;
+  ticket: TicketReducer;
 };

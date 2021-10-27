@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useReduxState } from '../../hooks/useReduxState';
-import * as EventActions from '../../actions/event';
+import * as TicketActions from '../../actions/ticket';
 import Footer from '../../components/Footer/Footer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Styled from './Finish.style';
@@ -13,11 +13,16 @@ const Finish: React.FC = ({
   navigation,
 }: any) => {
   const dispatch = useDispatch();
-  const { event } = useReduxState();
+  const { event, auth } = useReduxState();
 
   const [paymentOption, setPaymentOption] = useState(1);
 
   const handleClickBuy = () => {
+    dispatch(TicketActions.create({
+      paymentStatus: 1,
+      eventId: event.detail.id!,
+      userId: auth.me.id!
+    }))
     navigation.navigate('Main', { screen: 'Inventory' });
   };
 
@@ -40,7 +45,7 @@ const Finish: React.FC = ({
       </Styled.TicketsWrapper>
       <Styled.TotalTextWrapper>
         <Styled.TotalText>Total</Styled.TotalText>
-        <Styled.TotalText>R$ {event.detail.price}</Styled.TotalText>
+        <Styled.TotalText>R$ {event.detail.price.toFixed(2).replace('.', ',')}</Styled.TotalText>
       </Styled.TotalTextWrapper>
       <Styled.ButtonWrapper>
         <AppButton
