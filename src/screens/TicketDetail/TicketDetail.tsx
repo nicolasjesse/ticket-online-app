@@ -1,7 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { useReduxState } from '../../hooks/useReduxState';
-import * as TicketActions from '../../actions/ticket';
 import Footer from '../../components/Footer/Footer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Styled from './TicketDetail.style';
