@@ -14,7 +14,7 @@ const EventDetail: React.FC = ({
   return (
     <Styled.Container>
       <Styled.TitleWrapper>
-        <Styled.Title>
+        <Styled.Title ellipsizeMode='tail' numberOfLines={1}>
           {event.detail.name + ' '}
           ({event.detail.eventType === 1 ? 'Presencial' : 'Online'})
         </Styled.Title>
@@ -30,7 +30,7 @@ const EventDetail: React.FC = ({
           </Styled.InfoItemIconWrapper>
           <Styled.InfoItemText>
             {event.detail.price <= 0 ?
-              'Gratuito' : `R$ ${event.detail.price
+              ' Gratuito' : `R$ ${event.detail.price
                 .toFixed(2)
                 .replace('.', ',')}`}
           </Styled.InfoItemText>
@@ -66,12 +66,12 @@ const EventDetail: React.FC = ({
         <AppButton
           title={'Comprar Ingresso'}
           onPress={() => navigation.navigate('Main', { screen: 'Finish' })}
-          disabled={event.detail.tickets?.filter((obj) => obj.userId === auth.me.id).length! > 0}
+          disabled={(event.detail.tickets && event?.detail?.tickets?.filter((obj) => obj.userId === auth?.me?.id).length! > 0) || false}
         />
       </Styled.ButtonWrapper>
-        {event.detail.tickets!.filter((obj) => obj.userId === auth.me.id).length > 0 ?
-          <><Styled.AlreadyHas>Você ja possui um ingresso do evento.</Styled.AlreadyHas></> :
-          <></>}
+      {event.detail.tickets && event.detail.tickets.filter((obj) => obj.userId === auth.me.id).length > 0 ?
+        <><Styled.AlreadyHas>Você ja possui um ingresso do evento.</Styled.AlreadyHas></> :
+        <></>}
       <Footer navigation={navigation} index={1} type={1} />
     </Styled.Container>
   );

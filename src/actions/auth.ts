@@ -6,6 +6,7 @@ import {
   AUTH_LOGOUT,
   AUTH_ME,
 } from './actionTypes';
+import { addLoading, removeLoading } from './loading';
 
 export const getMe = (id: string) => async (
   dispatch: any,
@@ -38,7 +39,6 @@ export const authenticate = (userData: models.AuthRequest) => async (
   dispatch: any,
 ) => {
   const payload: models.AuthResponse = await AuthApi.login(userData);
-
   await AsyncStorage.setItem('@userToken', payload.token!);
 
   dispatch({
@@ -52,16 +52,29 @@ export const authenticate = (userData: models.AuthRequest) => async (
   }
 };
 
-export const register = (userData: models.User) => async () => {
-  await AuthApi.register(userData);
+export const register = (userData: models.User) => async (
+  dispatch: any,
+) => {
+  dispatch(addLoading());
+  try {
+    await AuthApi.register(userData);
+  } finally {
+    dispatch(removeLoading());
+  }
 };
 
 export const logout = () => async (
   dispatch: any,
 ) => {
-  await AsyncStorage.removeItem('@userToken');
+  dispatch(addLoading());
+  try {
+    await AsyncStorage.removeItem('@userToken');
 
-  dispatch({
-    type: AUTH_LOGOUT,
-  });
+    dispatch({
+      type: AUTH_LOGOUT,
+    });
+  } finally {
+    dispatch(removeLoading());
+  }
+
 };

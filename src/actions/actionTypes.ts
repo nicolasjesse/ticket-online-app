@@ -12,3 +12,7 @@ export const EVENT_REPORT = 'EVENT_REPORT';
 // ticket types
 export const TICKET_DETAIL = 'TICKET_DETAIL';
 export const TICKET_REPORT = 'TICKET_REPORT';
+
+// loading types
+export const INCREASE_LOADING = 'INCREASE_LOADING';
+export const DESCREASE_LOADING = 'DESCREASE_LOADING';

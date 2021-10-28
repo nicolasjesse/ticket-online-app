@@ -25,3 +25,9 @@ export const ParticipantsWrapper = styled.ScrollView.attrs({
 })`
 padding-bottom: ${0.09 * Dimensions.get('window').height}px;
 `;
+
+export const ParticipantsLabel = styled.Text`
+  color: ${colors.black};
+  margin-left: ${0.05 * Dimensions.get('window').width}px;
+  margin-bottom: ${0.02 * Dimensions.get('window').height}px;
+`;

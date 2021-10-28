@@ -19,7 +19,7 @@ const Finish: React.FC = ({
 
   const handleClickBuy = () => {
     dispatch(TicketActions.create({
-      paymentStatus: 1,
+      paymentStatus: event.detail.price > 0 ? 1 : 2,
       eventId: event.detail.id!,
       userId: auth.me.id!
     }))

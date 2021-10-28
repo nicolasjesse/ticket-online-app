@@ -28,7 +28,7 @@ const ListedEvent: React.FC<IProps> = ({
           resizeMode={'cover'}
           source={require('../../assets/event-logo.jpg')}
         />
-        <Styled.NameLabel>{event.name}</Styled.NameLabel>
+        <Styled.NameLabel ellipsizeMode='tail' numberOfLines={2}>{event.name}</Styled.NameLabel>
       </Styled.LeftWrapper>
       <Styled.MiddleWrapper>
         {type === 1 ?
@@ -39,7 +39,7 @@ const ListedEvent: React.FC<IProps> = ({
             <Styled.SectionLabel ellipsizeMode='tail' numberOfLines={1}>
               Preço:
               <Styled.SectionText>
-                {event.price <= 0 ? 'Gratuito' :
+                {event.price <= 0 ? ' Gratuito' :
                   ` R$ ${event.price.toFixed(2).replace('.', ',')}`}
               </Styled.SectionText>
             </Styled.SectionLabel>

@@ -12,6 +12,7 @@ const Participants: React.FC = ({
 
   return (
     <Styled.Container>
+      <Styled.ParticipantsLabel>Participantes do evento:</Styled.ParticipantsLabel>
       <Styled.ParticipantsWrapper>
         {ticket.list?.map((tic) => (
           <ListedParticipant
