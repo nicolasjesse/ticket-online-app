@@ -21,7 +21,7 @@ export const TitleWrapper = styled.View`
 
 export const Title = styled.Text`
   margin-left: ${0.05 * Dimensions.get('window').width}px;
-  font-size: ${normalize(22)}px;
+  font-size: ${normalize(18)}px;
   color: ${colors.black};
 `;
 

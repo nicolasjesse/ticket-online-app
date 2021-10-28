@@ -21,7 +21,7 @@ export const TitleWrapper = styled.View`
 
 export const Title = styled.Text`
   margin-left: ${0.05 * Dimensions.get('window').width}px;
-  font-size: ${normalize(22)}px;
+  font-size: ${normalize(18)}px;
   color: ${colors.black};
 `;
 
@@ -61,7 +61,11 @@ export const InfoItemIconWrapper = styled.View`
 `;
 
 export const ButtonWrapper = styled.View`
-  margin-top: ${0.04 * Dimensions.get('window').height}px;
+  margin-top: ${0.035 * Dimensions.get('window').height}px;
   height: ${0.045 * Dimensions.get('window').height}px;
   width: ${0.9 * Dimensions.get('window').width}px;
+`;
+
+export const AlreadyHas = styled.Text`
+  color: ${colors.red};
 `;

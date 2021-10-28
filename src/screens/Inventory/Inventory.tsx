@@ -9,8 +9,8 @@ import * as Styled from './Inventory.style';
 const Inventory: React.FC = ({
   navigation,
 }: any) => {
-  const { ticket, auth } = useReduxState();
   const dispatch = useDispatch();
+  const { ticket, auth } = useReduxState();
 
   const handleClickTicket = (id: string) => {
     dispatch(TicketActions.getDetail(id));

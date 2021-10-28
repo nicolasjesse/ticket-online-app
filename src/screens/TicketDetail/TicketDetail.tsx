@@ -15,7 +15,7 @@ const TicketDetail: React.FC = ({
   return (
     <Styled.Container>
       <Styled.TitleWrapper>
-        <Styled.Title>{ticket.detail.event?.name} ({ticket.detail.event?.eventType === 1 ? 'Presencial' : 'Online'})</Styled.Title>
+        <Styled.Title ellipsizeMode='tail' numberOfLines={1}>{ticket.detail.event?.name} ({ticket.detail.event?.eventType === 1 ? 'Presencial' : 'Online'})</Styled.Title>
       </Styled.TitleWrapper>
       <Styled.MainInfoWrapper>
         <Styled.IdLabel>ID: {ticket.detail.id}</Styled.IdLabel>
@@ -24,7 +24,7 @@ const TicketDetail: React.FC = ({
             {ticket.detail.paymentStatus === 1 ? 'Aguardando Pagamento' : (ticket.detail.paymentStatus === 2 ? 'Aprovado' : 'Recusado')}
           </Styled.StatusValue>
         </Styled.StatusLabel>
-        {ticket.detail.paymentStatus === 2 && ticket.detail.event?.eventType === 1 ? <Styled.QRCImage
+        {ticket.detail.paymentStatus && ticket.detail.paymentStatus === 2 && ticket.detail.event?.eventType === 1 ? <Styled.QRCImage
           resizeMode={'contain'}
           source={require('../../assets/qrcode.webp')}
         /> : <></>}
@@ -34,7 +34,7 @@ const TicketDetail: React.FC = ({
           <Styled.InfoItemIconWrapper>
             <Icon name="dollar" size={20} color={colors.black} />
           </Styled.InfoItemIconWrapper>
-          <Styled.InfoItemText>{ticket.detail.event!.price <= 0 ? 'Gratuito' : `R$ ${ticket.detail.event?.price}`}</Styled.InfoItemText>
+          <Styled.InfoItemText>{ticket.detail.event!.price <= 0 ? ' Gratuito' : `R$ ${ticket.detail.event?.price}`}</Styled.InfoItemText>
         </Styled.InfoItem>
         <Styled.InfoItem>
           <Styled.InfoItemIconWrapper>

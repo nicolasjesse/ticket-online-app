@@ -22,7 +22,7 @@ const MyEventDetail: React.FC = ({
   return (
     <Styled.Container>
       <Styled.TitleWrapper>
-        <Styled.Title>{event.detail?.name} ({event.detail.eventType === 1 ? 'Presencial' : 'Online'})</Styled.Title>
+        <Styled.Title ellipsizeMode='tail' numberOfLines={1}>{event.detail?.name} ({event.detail.eventType === 1 ? 'Presencial' : 'Online'})</Styled.Title>
       </Styled.TitleWrapper>
       <Styled.EventImage
         resizeMode={'contain'}
@@ -33,7 +33,7 @@ const MyEventDetail: React.FC = ({
           <Styled.InfoItemIconWrapper>
             <Icon name="dollar" size={20} color={colors.black} />
           </Styled.InfoItemIconWrapper>
-          <Styled.InfoItemText>{event.detail.price <= 0 ? 'Gratuito' : `R$ ${event.detail?.price}`}</Styled.InfoItemText>
+          <Styled.InfoItemText>{event.detail.price <= 0 ? ' Gratuito' : `R$ ${event.detail?.price}`}</Styled.InfoItemText>
         </Styled.InfoItem>
         <Styled.InfoItem>
           <Styled.InfoItemIconWrapper>

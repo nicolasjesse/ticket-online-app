@@ -2,6 +2,7 @@ import {
   TICKET_DETAIL, TICKET_REPORT,
 } from './actionTypes';
 import TicketRequests from '../repositories/ticket';
+import { addLoading, removeLoading } from './loading';
 
 export const cleanDetail = () => async (
   dispatch: any,
@@ -15,48 +16,74 @@ export const cleanDetail = () => async (
 export const create = (params: models.Ticket) => async (
   dispatch: any,
 ) => {
-  const payload = await TicketRequests.create(params);
+  dispatch(addLoading());
+  try {
+    const payload = await TicketRequests.create(params);
 
-  dispatch({
-    type: TICKET_DETAIL,
-    payload,
-  });
+    dispatch({
+      type: TICKET_DETAIL,
+      payload,
+    });
+  } finally {
+    dispatch(removeLoading());
+  }
 };
 
 export const getReport = (params: models.TicketGetRequest) => async (
   dispatch: any,
 ) => {
-  const payload = await TicketRequests.getReport(params);
+  dispatch(addLoading());
+  try {
+    const payload = await TicketRequests.getReport(params);
 
-  dispatch({
-    type: TICKET_REPORT,
-    payload,
-  });
+    dispatch({
+      type: TICKET_REPORT,
+      payload,
+    });
+  } finally {
+    dispatch(removeLoading());
+  }
 };
 
 export const getDetail = (id: string) => async (
   dispatch: any,
 ) => {
+  dispatch(addLoading());
+  try {
+    const payload = await TicketRequests.getDetail(id);
 
-  const payload = await TicketRequests.getDetail(id);
-
-  dispatch({
-    type: TICKET_DETAIL,
-    payload,
-  });
+    dispatch({
+      type: TICKET_DETAIL,
+      payload,
+    });
+  } finally {
+    dispatch(removeLoading());
+  }
 };
 
 export const update = (id?: string, params?: any) => async (
   dispatch: any,
 ) => {
-  const payload = await TicketRequests.update(id, params);
+  dispatch(addLoading());
+  try {
+    const payload = await TicketRequests.update(id, params);
 
-  dispatch({
-    type: TICKET_DETAIL,
-    payload,
-  });
+    dispatch({
+      type: TICKET_DETAIL,
+      payload,
+    });
+  } finally {
+    dispatch(removeLoading());
+  }
 };
 
-export const remove = (id: string) => async () => {
-  await TicketRequests.remove(id);
+export const remove = (id: string) => async (
+  dispatch: any
+) => {
+  dispatch(addLoading());
+  try {
+    await TicketRequests.remove(id);
+  } finally {
+    dispatch(removeLoading());
+  }
 };

@@ -16,8 +16,13 @@ export type TicketReducer = {
   detail: models.Ticket;
 };
 
+export type LoadingReducer = {
+  amount: number;
+};
+
 export type RootReducer = {
   auth: AuthReducer;
   event: EventReducer;
   ticket: TicketReducer;
+  loading: LoadingReducer;
 };

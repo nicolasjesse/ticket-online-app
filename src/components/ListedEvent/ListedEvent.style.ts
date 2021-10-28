@@ -40,8 +40,10 @@ export const RightWrapper = styled.View`
 `;
 
 export const NameLabel = styled.Text`
+  overflow: hidden;
   margin-top: ${0.003 * Dimensions.get('window').height}px;
   font-size: ${normalize(12)}px;
+  width: ${0.24 * Dimensions.get('window').width}px;
   color: ${colors.black};
 `;
 
