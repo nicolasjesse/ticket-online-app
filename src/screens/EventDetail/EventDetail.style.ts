@@ -61,7 +61,11 @@ export const InfoItemIconWrapper = styled.View`
 `;
 
 export const ButtonWrapper = styled.View`
-  margin-top: ${0.04 * Dimensions.get('window').height}px;
+  margin-top: ${0.035 * Dimensions.get('window').height}px;
   height: ${0.045 * Dimensions.get('window').height}px;
   width: ${0.9 * Dimensions.get('window').width}px;
+`;
+
+export const AlreadyHas = styled.Text`
+  color: ${colors.red};
 `;

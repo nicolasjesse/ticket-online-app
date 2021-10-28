@@ -9,7 +9,7 @@ import { colors } from '../../config/theme.json';
 const EventDetail: React.FC = ({
   navigation,
 }: any) => {
-  const { event } = useReduxState();
+  const { event, auth } = useReduxState();
 
   return (
     <Styled.Container>
@@ -65,8 +65,13 @@ const EventDetail: React.FC = ({
       <Styled.ButtonWrapper>
         <AppButton
           title={'Comprar Ingresso'}
-          onPress={() => navigation.navigate('Main', { screen: 'Finish' })} />
+          onPress={() => navigation.navigate('Main', { screen: 'Finish' })}
+          disabled={event.detail.tickets?.filter((obj) => obj.userId === auth.me.id).length! > 0}
+        />
       </Styled.ButtonWrapper>
+        {event.detail.tickets!.filter((obj) => obj.userId === auth.me.id).length > 0 ?
+          <><Styled.AlreadyHas>Você ja possui um ingresso do evento.</Styled.AlreadyHas></> :
+          <></>}
       <Footer navigation={navigation} index={1} type={1} />
     </Styled.Container>
   );
