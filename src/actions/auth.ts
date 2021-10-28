@@ -7,6 +7,7 @@ import {
   AUTH_ME,
 } from './actionTypes';
 import { addLoading, removeLoading } from './loading';
+import * as MessageService from '../services/message';
 
 export const getMe = (id: string) => async (
   dispatch: any,
@@ -38,17 +39,21 @@ export const checkLogged = () => async (
 export const authenticate = (userData: models.AuthRequest) => async (
   dispatch: any,
 ) => {
-  const payload: models.AuthResponse = await AuthApi.login(userData);
-  await AsyncStorage.setItem('@userToken', payload.token!);
+  try {
+    const payload: models.AuthResponse = await AuthApi.login(userData);
+    await AsyncStorage.setItem('@userToken', payload.token!);
 
-  dispatch({
-    type: AUTH_LOGIN,
-    payload,
-  });
+    dispatch({
+      type: AUTH_LOGIN,
+      payload,
+    });
 
-  await dispatch(checkLogged());
-  if (payload.id) {
-    await dispatch(getMe(payload.id));
+    await dispatch(checkLogged());
+    if (payload.id) {
+      await dispatch(getMe(payload.id));
+    }
+  } catch (err) {
+    MessageService.error('Não foi possível fazer o login.');
   }
 };
 
@@ -58,6 +63,8 @@ export const register = (userData: models.User) => async (
   dispatch(addLoading());
   try {
     await AuthApi.register(userData);
+  } catch (err) {
+    MessageService.error('Não foi possível fazer o cadastro.');
   } finally {
     dispatch(removeLoading());
   }
